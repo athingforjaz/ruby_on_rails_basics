@@ -58,7 +58,7 @@ Anything in (()) is something you should name yourself.
 - VS Code: app/assets/stylesheets/application (and there are other stylesheets generated for each controller too)
 
 ## CRUD Controller Example Code
-{
+```
     class ArticlesController < ApplicationController
   def index
     @articles = Article.all
@@ -108,5 +108,5 @@ Anything in (()) is something you should name yourself.
       params.require(:article).permit(:title, :text)
     end
 end
-}
+```
 
