@@ -14,8 +14,12 @@ Anything in (()) is something you should name yourself.
 ## Getting Started
 - $ rails server
     - Ctrl + C to stop the server (even on Mac)
-    - Recommended to have a SECOND command line open for this
+    - Recommended to have a SECOND terminal/command line open for this
 - Check http://localhost:3000 for "Yay! You're on Rails!"
+
+Troubleshooting
+- Is your server connection open?
+- Are you in the right folder?
 
 ### First Controller, Routes, & View
 - $ rails generate controller ((Name)) ((any pages to create))
@@ -23,20 +27,30 @@ Anything in (()) is something you should name yourself.
 - VS Code: Edit the new view 
 - VS Code: Update routes at config/routes.rb
     - Lots of ways to add routes, in the tutorial you add `resources : articles` here
-    - See also Academty Twitch 11/9 & 11/10 for other ways
+    - See also Academy Twitch 11/9 & 11/10 for other ways
+
+Troubleshooting: 
+- Does your controller have a corresponding view?
+- Do you have the right routes for your controller to show the correct view? 
 
 ### Editing Your Controller
 - VS Code: Add functions to your controller
     - `def new` `end` is what's in the tutorial
     - Whatever other functions you want your controller to do
-    - Any "page" you want to add to your view needs at least `def function end`
+    - Any page you want to add to your view needs at least `def function end`
+
+Troubleshooting:
+- Are your functions extant? Is the syntax right (ie, right number of ends)?
+- Does the controller exist for your page? Does the function? 
 
 ### Editing Your View
 - VS Code: Add HTML or whatever to the view associated with the function you added to your controller
+- Embed Ruby with plague brackets: <% here there be ruby %>
 
 ### Workflow Within a Controller
 - Add a function to your controller, make a view page for it, add HTML to that view page. 
      - It seems like this is the basic loop here although your mileage may vary
+- Check in on your routes if you did something weird with your controller - you might need to specify what the route is for that function (for example, if you named it differently than your view).
 
 ### Adding a Model
 - $ rails generate model ((Name))((column:coltype)) 
@@ -48,11 +62,18 @@ Anything in (()) is something you should name yourself.
     - If not, you can $ rails db:rollback and do it over
     - There's another method for adding a column to a table that I have not gotten to work, but it looks like this: $ rails generate migration add_fieldname_to_tablename fieldname:string
 
+Troubleshooting:
+- You can look at your db in an external program, for example, Dbeaver
+- Did you migrate your database?
+- Is your connection set up correctly (less of a program in Rails, more of one in MVC)
+
 ### Other Stuff
 - Ruby "strong parameters" requires you to say which parameters you'll allow. See the private method at the bottom of the code example below, or Section 5.6 of the tutorial.
 - Adding validation: Section 5.10 of the tutorial
 - Linking from page to page in RoR: `<% link_to 'Link Text', functionname_controllername_path %>`
 - Pass through Ruby in a .html.erb (embedded Ruby) file with `<% ruby goes here %>` OR `<%= ruby that has a return to display goes here%>`
+- Google "ruby on rails scaffolding" to get the instructions for setting up all your standard CRUD actions super quickly, along with the views. 
+- In the command line, literally anything with `--help` after it will tell you more about what it does. 
 
 ### Adding Styling
 - VS Code: app/assets/stylesheets/application (and there are other stylesheets generated for each controller too)
